@@ -1,0 +1,21 @@
+replicaCount: 5
+
+image:
+  repository: myorg/backend
+  tag: "2.8.1"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
+  limits:
+    cpu: 1
+    memory: 1Gi
+
+environment:
+  APP_ENV: production
