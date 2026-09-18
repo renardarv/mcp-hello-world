@@ -1,0 +1,21 @@
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: "1.29"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+environment:
+  APP_ENV: production
